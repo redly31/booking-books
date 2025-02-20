@@ -1,13 +1,14 @@
-import { BookmarkIcon } from "@radix-ui/react-icons";
-import { Box, Button, Card, Container, Flex, Inset, Strong, Text } from "@radix-ui/themes";
+import { Box, Card, Container, Flex, Inset, Strong, Text } from "@radix-ui/themes";
 import { IBook } from "../model/IBook";
 
 type BookCardProps = {
   book: IBook;
+  AddBookToCartButton: React.ComponentType<{ book: IBook }>;
+  AddBookToFavoriteButton: React.ComponentType<{ book: IBook }>;
 }
 
 export function BookCard(props: BookCardProps) {
-  const { book } = props
+  const { book, AddBookToCartButton, AddBookToFavoriteButton } = props
   return (
     <Box maxWidth="350px" mt="3">
       <Card size="1">
@@ -35,8 +36,8 @@ export function BookCard(props: BookCardProps) {
         </Text>
         <Flex justify="between" align="center" mt="2">
           <Container>
-            <Button variant="solid">В корзину</Button>
-            <Button variant="solid" ml="2"><BookmarkIcon/></Button>
+            <AddBookToCartButton book={book}/>
+            <AddBookToFavoriteButton book={book}/>
           </Container>
           <Text><Strong>{book.price} {book.currency}</Strong></Text>
         </Flex>

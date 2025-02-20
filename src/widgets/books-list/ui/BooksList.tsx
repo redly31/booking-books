@@ -2,6 +2,8 @@ import { useQuery } from "@apollo/client";
 import { BookCard } from "@entities/book";
 import { GET_BOOKS } from "@entities/book/api/getBooks";
 import { IBook } from "@entities/book/model/IBook";
+import { AddBookToCartButton } from "@features/cart";
+import { AddBookToFavoriteButton } from "@features/favorite";
 import { Grid } from "@radix-ui/themes";
 
 export function BooksList() {
@@ -13,7 +15,7 @@ export function BooksList() {
   return (
     <Grid columns={{xs: "1", sm: "2"}} gap="3" width="auto">
       {data.books.map((book: IBook) => 
-          <BookCard key={book.id} book={book}/>
+          <BookCard key={book.id} AddBookToFavoriteButton={AddBookToFavoriteButton} AddBookToCartButton={AddBookToCartButton} book={book}/>
       )}
     </Grid>
   )
