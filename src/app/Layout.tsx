@@ -5,6 +5,7 @@ import { Header } from "@widgets/header";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import apolloClient from "./config/apolloClient";
 import { FavoritePage } from "@pages/favorite";
+import CartPage from "@pages/cart/CartPage";
 
 export default function Layout() {
   return (
@@ -15,6 +16,7 @@ export default function Layout() {
             <Route element={<Header />}>
               <Route path="/" element={<HomePage />} />
               <Route path="/favorite" element={<FavoritePage />} />
+              <Route path="/cart" element={<CartPage />} />
             </Route>
           </Routes>
         </BrowserRouter>
