@@ -1,4 +1,5 @@
-import { BookmarkIcon, MagnifyingGlassIcon } from "@radix-ui/react-icons";
+import { SearchButton } from "@features/search";
+import { BookmarkIcon } from "@radix-ui/react-icons";
 import { Button, Container, Flex, Text } from "@radix-ui/themes";
 import { NavLink, Outlet } from "react-router-dom";
 
@@ -10,7 +11,7 @@ export function Header() {
         <Flex>
           <NavLink to="/favorite"><Button variant="solid" mr="2"><BookmarkIcon/></Button></NavLink>
           <NavLink to="/cart"><Button variant="solid" mr="2">Корзина</Button></NavLink>
-          <NavLink to="/search"><Button variant="solid"><MagnifyingGlassIcon/> Поиск</Button></NavLink>
+          <SearchButton/>
         </Flex>
         
       </Flex>
