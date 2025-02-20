@@ -8,8 +8,8 @@ export function Header() {
       <Flex align="center" justify="between">
         <NavLink to="/"><Text weight="bold">Booking Books</Text></NavLink>
         <Flex>
-          <NavLink to="/search"><Button variant="solid" mr="2"><BookmarkIcon/></Button></NavLink>
-          <NavLink to="/search"><Button variant="solid" mr="2">Корзина</Button></NavLink>
+          <NavLink to="/favorite"><Button variant="solid" mr="2"><BookmarkIcon/></Button></NavLink>
+          <NavLink to="/cart"><Button variant="solid" mr="2">Корзина</Button></NavLink>
           <NavLink to="/search"><Button variant="solid"><MagnifyingGlassIcon/> Поиск</Button></NavLink>
         </Flex>
         
